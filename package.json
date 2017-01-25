@@ -1,0 +1,27 @@
+{
+  "name": "niru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "bin": {
+    "niru": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaachelbling/niru.git"
+  },
+  "author": "Isaac Helbling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaachelbling/niru/issues"
+  },
+  "homepage": "https://github.com/isaachelbling/niru#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "exec": "^0.2.1",
+    "fs-jetpack": "^0.10.5"
+  }
+}
