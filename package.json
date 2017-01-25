@@ -21,7 +21,9 @@
   "homepage": "https://github.com/isaachelbling/niru#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "exec": "^0.2.1",
-    "fs-jetpack": "^0.10.5"
+    "fs-jetpack": "^0.10.5",
+    "js-yaml": "^3.7.0",
+    "simple-git": "^1.65.0",
+    "user-home": "^2.0.0"
   }
 }
