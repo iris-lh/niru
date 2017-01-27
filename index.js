@@ -12,7 +12,6 @@ var soupfileExists = jetpack.exists(soupfilePath)
 
 
 niru
-  // .usage('init')
   .command('init', 'initialize niru with a soupfile')
   .action(function(){
     if (niru.args[0] === 'init') {
