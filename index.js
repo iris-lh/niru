@@ -21,31 +21,25 @@ niru
   })
 
 niru
-  // .usage('<noodle> [path]')
-  .arguments('<noodle> [path]')
-  .option('-g, --git', ' initialize the project as a Git repository')
-  .action(function(chopstick, path){
-    var soup         = yaml.safeLoad(jetpack.read(soupfilePath))
-    var noodles      = soup.noodles
-    var noodle       = noodles[chopstick]
-    var repoName     = noodle.split('/')[4]
-    if (!path) var path = repoName
+  .command('get', 'get a boilerplate from the collection')
+  .arguments('<boilerplate>')
+  .action(function(boilerplate){
+    if (niru.args[0] === 'get') {
+      var soup         = yaml.safeLoad(jetpack.read(soupfilePath))
+      var noodles      = soup.noodles
+      var noodle       = noodles[boilerplate]
+      console.log(
+        'BOILERPLATE:',boilerplate,'\n',
+        'SOUP:',soup,'\n',
+        'NOODLES:',noodles,'\n',
+        'NOODLE:',noodle,'\n'
+      )
+      if (!path) var path = repoName
 
-    console.log(`creating ${chopstick} boilerplate at ${path}`)
-    git.clone(noodle, (jetpack.cwd() + '/' + path) || jetpack.cwd() + '/' + repoName)
-    process.exit()
+      console.log(`creating ${boilerplate} boilerplate at ${path}`)
+      git.clone(noodle, jetpack.cwd())
+      process.exit()
+    }
   })
-
-niru.on('--help', function(){
-  console.log('  Examples:');
-  console.log('');
-  console.log('    $ niru -g my-boilerplate ./new-project');
-  console.log('');
-});
-
-niru.usage(
-  /*      niru*/'[options] <noodle> [path]\n' +
-  '     Or: niru <command> [options]'
-)
 
 niru.parse(process.argv)
