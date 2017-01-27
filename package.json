@@ -1,7 +1,7 @@
 {
   "name": "niru",
   "version": "1.0.0",
-  "description": "",
+  "description": "A boilerplate manager",
   "main": "test.js",
   "bin": {
     "niru": "./index.js"
